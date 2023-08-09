@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import { cls } from '../libs/utils';
-import { useRouter } from 'next/router';
+import React from "react";
+import Link from "next/link";
+import { cls } from "../libs/client/utils";
+import { useRouter } from "next/router";
 
 interface LayoutProps {
   title?: string;
@@ -10,12 +10,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function Layout({
-  title,
-  canGoBack,
-  hasTabBar,
-  children,
-}: LayoutProps) {
+export default function Layout({ title, canGoBack, hasTabBar, children }: LayoutProps) {
   const router = useRouter();
   const onClick = () => {
     router.back();
@@ -42,19 +37,19 @@ export default function Layout({
           </button>
         ) : null}
         {title ? (
-          <span className={cls(canGoBack ? 'mx-auto' : '', '')}>{title}</span>
+          <span className={cls(canGoBack ? "mx-auto" : "", "")}>{title}</span>
         ) : null}
       </div>
-      <div className={cls('pt-12', hasTabBar ? 'pb-24' : '')}>{children}</div>
+      <div className={cls("pt-12", hasTabBar ? "pb-24" : "")}>{children}</div>
       {hasTabBar ? (
         <nav className="bg-white max-w-xl text-gray-700 border-t fixed bottom-0 w-full px-10 pb-5 pt-3 flex justify-between text-xs">
           <Link href="/">
             <a
               className={cls(
-                'flex flex-col items-center space-y-2 ',
-                router.pathname === '/'
-                  ? 'text-orange-500'
-                  : 'hover:text-gray-500 transition-colors'
+                "flex flex-col items-center space-y-2 ",
+                router.pathname === "/"
+                  ? "text-orange-500"
+                  : "hover:text-gray-500 transition-colors"
               )}
             >
               <svg
@@ -77,10 +72,10 @@ export default function Layout({
           <Link href="/community">
             <a
               className={cls(
-                'flex flex-col items-center space-y-2 ',
-                router.pathname === '/community'
-                  ? 'text-orange-500'
-                  : 'hover:text-gray-500 transition-colors'
+                "flex flex-col items-center space-y-2 ",
+                router.pathname === "/community"
+                  ? "text-orange-500"
+                  : "hover:text-gray-500 transition-colors"
               )}
             >
               <svg
@@ -103,10 +98,10 @@ export default function Layout({
           <Link href="/chats">
             <a
               className={cls(
-                'flex flex-col items-center space-y-2 ',
-                router.pathname === '/chats'
-                  ? 'text-orange-500'
-                  : 'hover:text-gray-500 transition-colors'
+                "flex flex-col items-center space-y-2 ",
+                router.pathname === "/chats"
+                  ? "text-orange-500"
+                  : "hover:text-gray-500 transition-colors"
               )}
             >
               <svg
@@ -129,10 +124,10 @@ export default function Layout({
           <Link href="/live">
             <a
               className={cls(
-                'flex flex-col items-center space-y-2 ',
-                router.pathname === '/live'
-                  ? 'text-orange-500'
-                  : 'hover:text-gray-500 transition-colors'
+                "flex flex-col items-center space-y-2 ",
+                router.pathname === "/live"
+                  ? "text-orange-500"
+                  : "hover:text-gray-500 transition-colors"
               )}
             >
               <svg
@@ -155,10 +150,10 @@ export default function Layout({
           <Link href="/profile">
             <a
               className={cls(
-                'flex flex-col items-center space-y-2 ',
-                router.pathname === '/profile'
-                  ? 'text-orange-500'
-                  : 'hover:text-gray-500 transition-colors'
+                "flex flex-col items-center space-y-2 ",
+                router.pathname === "/profile"
+                  ? "text-orange-500"
+                  : "hover:text-gray-500 transition-colors"
               )}
             >
               <svg
